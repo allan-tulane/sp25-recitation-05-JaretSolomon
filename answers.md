@@ -38,7 +38,10 @@ the results as well.
 | 100000 |             178.054 |              198.197 |     18.293 |
 
 
-Quicksort average case: O(n log n) Quicksort worst case: O(n^2) Selection sort average case: O(n^2) Selection sort worst case: O(n^2)
+Quicksort average case: O(n log n) 
+Quicksort worst case: O(n^2)
+Selection sort average case: O(n^2)
+Selection sort worst case: O(n^2)
 
 
 - **1c.**
@@ -47,4 +50,4 @@ Quicksort average case: O(n log n) Quicksort worst case: O(n^2) Selection sort a
 Python uses a sorting algorithm called [*Timsort*](https://en.wikipedia.org/wiki/Timsort), designed by Tim Peters. Compare the fastest of your sorting implementations to the Python
 sorting function `sorted`, conducting the tests in 1b above. 
 
-1c. tim-sort can be seen in the table above. It is faster than any of the other algorithms implemented in this lab.
+1c. tim-sort can be seen in the table above. It is faster than the other algorithms in this lab. As shown in the table, Timsort is the fastest across all tested sizes, beating both fixed- and random-pivot quicksorts and far surpassing selection sort for large n.
