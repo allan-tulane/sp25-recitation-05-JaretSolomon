@@ -7,30 +7,44 @@
 Place all written answers from `recitation-05.md` here for easier grading.
 
 
-
+Compare running times using `compare-sort` between variants of
+Quicksort and the
+provided implementation of selection sort (`ssort`). Perform two
+different comparisons: a comparison between sorting methods using
+random permutations of the specified sizes, and a comparison using
+already sorted permutations. How do the running times compare to the
+asymptotic bounds? How does changing the type of input list change the
+relative performance of these algorithms? Note that you may have to
+modify the list sizes based on your system memory; compare at least 10
+different list sizes. The `print_results` function in `main.py` gives
+a table of results, but feel free to use code from Lab 1 to plot
+the results as well. 
 
 
 
 
 - **1b.**
-|      n |   qsort-fixed-pivot |   qsort-random-pivot |   tim-sort |
-|--------|---------------------|----------------------|------------|
-|    100 |               0.094 |                0.112 |      0.009 |
-|    200 |               0.185 |                0.231 |      0.019 |
-|    500 |               0.606 |                0.712 |      0.053 |
-|   1000 |               1.253 |                1.343 |      0.112 |
-|   2000 |               2.617 |                2.916 |      0.240 |
-|   5000 |               6.976 |                7.923 |      0.659 |
-|  10000 |              14.949 |               16.966 |      1.418 |
-|  20000 |              31.877 |               34.894 |      3.095 |
-|  50000 |              82.645 |               93.308 |      8.599 |
-| 100000 |             184.781 |              203.350 |     18.344 |
+|      n |   qsort-fixed-pivot |   qsort-random-pivot |   time-sort||time-sort |
+|--------|---------------------|----------------------|------------||----------|
+|    100 |               0.097 |                0.118 |      0.010 |
+|    200 |               0.187 |                0.226 |      0.018 |
+|    500 |               0.578 |                0.733 |      0.053 |
+|   1000 |               1.226 |                1.314 |      0.115 |Recursion Depth (< 1000)
+|   2000 |               2.657 |                3.006 |      0.244 |
+|   5000 |               6.806 |                7.816 |      0.659 |
+|  10000 |              14.685 |               17.689 |      1.423 |
+|  20000 |              31.648 |               36.761 |      3.076 |
+|  50000 |              86.366 |              101.339 |      8.638 |
+| 100000 |             178.054 |              198.197 |     18.293 |
 
-(Coudln't properly format Selection Sort)
 
 Quicksort average case: O(n log n) Quicksort worst case: O(n^2) Selection sort average case: O(n^2) Selection sort worst case: O(n^2)
 
 
 - **1c.**
 
-1c. tim-sort can be seen in the table above in 1b. It can be seen it is faster than any of the other algorithms implemented in this lab.
+
+Python uses a sorting algorithm called [*Timsort*](https://en.wikipedia.org/wiki/Timsort), designed by Tim Peters. Compare the fastest of your sorting implementations to the Python
+sorting function `sorted`, conducting the tests in 1b above. 
+
+1c. tim-sort can be seen in the table above. It is faster than any of the other algorithms implemented in this lab.

@@ -3,14 +3,14 @@ import tabulate
 
 def ssort(L):
     ### selection sort
-    if (len(L) == 1):
+    if (len(L) <= 1):
         return(L)
     else:
         m = L.index(min(L))
         print('selecting minimum %s' % L[m])       
         L[0], L[m] = L[m], L[0]
         print('recursively sorting L=%s\n' % L[1:])
-        return [L[0]] + selection_sort(L[1:])
+        return [L[0]] + ssort(L[1:])
         
 def qsort(a, pivot_fn):
     ## TO DO
@@ -65,7 +65,7 @@ def compare_sort(sizes=[100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 10
         qsort_fixed_pivot = time_search(lambda a: qsort(a, lambda a: a[0]), mylist[:])
         qsort_random_pivot = time_search(lambda lst: qsort(lst, lambda lst: random.choice(lst)), mylist[:])
         tim_sort_t = time_search(sorted, mylist[:])
-        # ssort_time_t = time_search(ssort, mylist[:])
+        # ssort_time_t = time_search(ssort, mylist[:]) Recursion Depth
 
         result.append([
             len(mylist),
@@ -77,7 +77,7 @@ def compare_sort(sizes=[100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 10
     ###
 def print_results(results):
 
-    print(tabulate.tabulate(results, headers=['n', 'qsort-fixed-pivot', 'qsort-random-pivot', 'tim-sort'],
+    print(tabulate.tabulate(results, headers=['n', 'qsort-fixed-pivot', 'qsort-random-pivot', 'tim-sort',],
                          floatfmt=".3f",tablefmt="github"))
 
 def test_print():
